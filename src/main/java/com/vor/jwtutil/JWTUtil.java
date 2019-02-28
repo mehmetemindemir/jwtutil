@@ -17,7 +17,7 @@ public class JWTUtil {
     private int expireTime = 60*60*1000; //Min
     private String environment = "prod";
     Date exp=null;
-    private static final String secret = "A343Ghjhgj34543SdfyyopR445";
+    private static final String secret = "A34sdsd3Ghjhgj34543SdfsdfsdfsdfsdfsdfyopR445";
 
     public JWTUtil(Builder builder){
         issuer              = builder.issuer;

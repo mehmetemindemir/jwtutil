@@ -14,7 +14,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 
 public class JWTUtil {
 	private static String issuer = "mehmetemindemir@outlook.com";
-    private int expireTime = 60*60*1000; //Min
+    private int expireTime = 15*60*1000; //Min
     private String environment = "prod";
     Date exp=null;
     private static final String secret = "A34sdsd3Ghjhgj34543SdfsdfsdfsdfsdfsdfyopR445";
@@ -23,14 +23,14 @@ public class JWTUtil {
         issuer              = builder.issuer;
         this.environment    = builder.environment;
         this.expireTime     = builder.expireTime;
-    } 
+    }
     public static Builder create(){
         return new Builder();
     }
     public static class Builder {
 
         private String issuer = "mehmetemindemir@outlook.com";
-        private int expireTime = 60*60*1000; //min
+        private int expireTime = 15*60*1000; //min
         private String environment = "prod";
 
         public JWTUtil build() {
@@ -52,7 +52,7 @@ public class JWTUtil {
             return this;
         }
 
-        
+
 
     }
 

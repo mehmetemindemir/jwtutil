@@ -1,4 +1,4 @@
-package com.vor.jwtutil;
+package com.jwtutil;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
@@ -30,7 +30,7 @@ public class JWTUtil {
     public static class Builder {
 
         private String issuer = "mehmetemindemir@outlook.com";
-        private int expireTime = 15*60*1000; //min
+        private int expireTime = 99999999; //min
         private String environment = "prod";
 
         public JWTUtil build() {
@@ -56,7 +56,7 @@ public class JWTUtil {
 
     }
 
-    private static Date dateAddMinute(Date date, int minute) {
+    public   Date dateAddMinute(Date date, int minute) {
         Date newdate = date;
         try {
             Calendar cal = Calendar.getInstance();
@@ -88,7 +88,7 @@ public class JWTUtil {
 
     public String generateTokenWithJWT(Map<String, String> fields) throws UnsupportedEncodingException {
         String jwt = "";
-        exp = new Date(System.currentTimeMillis() + expireTime);
+        exp =  dateAddMinute(new Date() ,expireTime);
         Algorithm algorithm = Algorithm.HMAC256(secret);
         JWTCreator.Builder jwtBuilder = JWT.create().withIssuer(issuer)
                 .withExpiresAt(exp)

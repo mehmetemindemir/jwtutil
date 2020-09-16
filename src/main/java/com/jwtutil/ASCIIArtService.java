@@ -1,4 +1,4 @@
-package com.vor.jwtutil;
+package com.jwtutil;
 
 import java.awt.Font;
 import java.awt.Graphics;

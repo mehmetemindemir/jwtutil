@@ -30,7 +30,7 @@ public class JWTUtil {
     public static class Builder {
 
         private String issuer = "mehmetemindemir@outlook.com";
-        private int expireTime = 99999999; //min
+        private int expireTime = 15; //min
         private String environment = "prod";
 
         public JWTUtil build() {
